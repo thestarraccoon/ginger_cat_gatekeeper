@@ -1,0 +1,108 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  padding: 32px;
+  user-select: none;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  color: #fff;
+}
+
+.field {
+  margin-bottom: 24px;
+}
+
+.field label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.field label span {
+  color: #fff;
+  font-weight: 600;
+}
+
+input[type=range] {
+  width: 100%;
+  accent-color: #7c6af7;
+  cursor: pointer;
+}
+
+.separator {
+  border: none;
+  border-top: 1px solid #2a2a4a;
+  margin: 24px 0;
+}
+
+.future-badge {
+  display: inline-block;
+  background: #2a2a4a;
+  color: #7c6af7;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+.process-placeholder {
+  background: #0f0f1e;
+  border: 1px dashed #2a2a4a;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  color: #444;
+  font-size: 13px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+button:hover { opacity: 0.85; }
+
+#btn-save {
+  background: #7c6af7;
+  color: #fff;
+  font-weight: 600;
+}
+
+#btn-test {
+  background: #2a2a4a;
+  color: #aaa;
+}
+
+#saved-msg {
+  text-align: center;
+  color: #7c6af7;
+  font-size: 13px;
+  margin-top: 12px;
+  height: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#saved-msg.show { opacity: 1; }
