@@ -1,4 +1,4 @@
-const { ipcMain } = require('electron')
+const { ipcMain, app } = require('electron')
 const { getConfig, saveConfig } = require('./config')
 const { closeOverlay, showOverlay } = require('./windows')
 const { resetTimer } = require('./timer')
@@ -18,6 +18,10 @@ function registerIPC(callbacks) {
 
   ipcMain.handle('save-config', (_, newConfig) => {
     saveConfig(newConfig)
+    app.setLoginItemSettings({
+        openAtLogin: newConfig.openAtLogin,
+        name: 'Cat Gatekeeper',
+    })
     callbacks.onReset()
     return true
   })

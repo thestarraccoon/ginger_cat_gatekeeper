@@ -4,6 +4,7 @@ const breakSlider = document.getElementById('break-slider')
 const workVal = document.getElementById('work-val')
 const breakVal = document.getElementById('break-val')
 const savedMsg = document.getElementById('saved-msg')
+const loginCheckbox = document.getElementById('login-checkbox')
 
 // ─── Sliders ─────────────────────────────────────────────────────────────
 workSlider.addEventListener('input', () => {
@@ -19,6 +20,7 @@ document.getElementById('btn-save').addEventListener('click', async () => {
   await window.catAPI.saveConfig({
     workMinutes: parseInt(workSlider.value),
     breakSeconds: parseInt(breakSlider.value),
+    openAtLogin: loginCheckbox.checked,
   })
   savedMsg.classList.add('show')
   setTimeout(() => savedMsg.classList.remove('show'), 2500)
@@ -29,9 +31,12 @@ document.getElementById('btn-test').addEventListener('click', async () => {
   await window.catAPI.saveConfig({
     workMinutes: parseInt(workSlider.value),
     breakSeconds: parseInt(breakSlider.value),
+    openAtLogin: loginCheckbox.checked,
   })
   window.catAPI.showCat()
 })
+
+
 
 // ─── Load config due launch ────────────────────────────────────────
 async function init() {
@@ -40,6 +45,7 @@ async function init() {
   breakSlider.value = config.breakSeconds
   workVal.textContent = `${config.workMinutes} мин`
   breakVal.textContent = `${config.breakSeconds} сек`
+  loginCheckbox.checked = config.openAtLogin
 }
 
 init()

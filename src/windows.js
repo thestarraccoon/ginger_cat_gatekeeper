@@ -57,7 +57,7 @@ function showSettings() {
 
   settingsWindow = new BrowserWindow({
     width: 420,
-    height: 510,
+    height: 600,
     resizable: false,
     title: 'Cat Gatekeeper — Настройки',
     webPreferences: {
